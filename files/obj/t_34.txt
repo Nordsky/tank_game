@@ -1,0 +1,9 @@
+5
+0.05
+5
+25
+pic/player/body_b.png
+pic/player/body_r.png
+pic/player/dulo_test.png
+5
+12
