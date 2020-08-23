@@ -15,6 +15,7 @@ rezult_color = (210, 210, 210)
 record_color = (200,200,200)
 bg = (0,0,0)
 
+# for low skill users 
 def answer_window(screen, vari):
     if vari == 1:
         base = font.render("Вы хотите обнулить ангар ?", True, record_color)
@@ -23,6 +24,7 @@ def answer_window(screen, vari):
         base = font.render("Вы хотите обнулить рекорды ?", True, record_color)
         screen.blit(base, (s.X/2-170, s.Y/2-100))
 
+# main shop function
 def shop_buy(posi):
     # firs pillar
     if b.SH_BULLET_COUNT_R.collidepoint(posi):
@@ -59,9 +61,11 @@ def shop_buy(posi):
             s.GOLD -= s.SHOP_V[7]
             s.GOLD_BUST += 5
 
+# for crazzy player 
 def restore_record():
     s.HONOR_STAK = [0,0,0,0,0,0,0,0,0,0]
 
+# what is this )
 def restore_store():
     s.BULLET_COUNT = 0
     s.BULLET_SPEED = 0
@@ -72,6 +76,7 @@ def restore_store():
     s.SPEED_BUST = 0
     s.AMPLITUDE_BUST = 0.1
 
+# print shops product cost
 def shop_table(screen):
     gold = rezult_font.render(str(s.GOLD), True, rezult_color)
     screen.blit(gold, (s.X-200,30))
@@ -99,7 +104,7 @@ def shop_table(screen):
         name = font.render(str(s.SHOP_NAME[i+4]), True, record_color)
         screen.blit(name, (440,150+i*150))
 
-
+# i stop comment in this point. Tomorrow complite. Maybe...
 def record_table(screen):
     for i in range(10):
         honored = rezult_font.render(str(i+1)+" : "+str(int(s.HONOR_STAK[i])), True, record_color)
